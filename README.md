@@ -1,1 +1,5 @@
-# Aircraft-Factory-finished-
+# Aircraft Factory
+
+A database made in SQL Server 2016 that administrates an aircraft inventory, with tables raging from planes to radars and engines. The code is made of stored procedures and some views and user defined functions. All the tables has different relations between them, some having 1:n (like the tables Avion (1) and Motor (n)),others n:n (like the tables Avion and Armament, that use a separate table to store their IDs). The dbo.main procedure which you can find in the Stored Procedures folder generates, when executed, all the tables, their content and their clustered and non-clustered indexes. In case that the tables or the indexex already exist, the "main" procedure will delete the old components and replace them with fresh ones. In that way the creation is easily facilitated.
+
+The database procedures also contain JOIN,MODIFY and DELETE commands in its procedures that aren't used in "main", their usage being let at the user discretion (exception being on some join procedures that create the Many-to-Many relation between some tables). The "CursPF" procedure creates a cursor that eliminates some FK constraints.
